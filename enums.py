@@ -16,3 +16,4 @@ bank_names: Dict = {
     "NBU": "NBU",
     "KAPITAL_BANK": "Kapital Bank",
 }
+

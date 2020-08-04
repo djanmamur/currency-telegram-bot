@@ -20,7 +20,7 @@ def index(update, context):
 
 
 def currency(update, context):
-    currency_url: str = "https://still-badlands-57221.herokuapp.com/currency?by=rate"
+    currency_url: str = "http://localhost:8020/currency?by=rate"
     exchange_rates: List[Dict] = requests.get(currency_url).json()
     message: str = ""
     for exchange_rate in exchange_rates:
@@ -58,7 +58,7 @@ def button(update, context):
     query = update.callback_query
     callback_data = query.data
 
-    currency_url: str = "https://still-badlands-57221.herokuapp.com/currency?by=rate"
+    currency_url: str = "http://localhost:8020/currency?by=rate"
     exchange_rates = requests.get(currency_url).json()
     exchange_rate_for_currency = exchange_rates.get(callback_data)
     if exchange_rate_for_currency:

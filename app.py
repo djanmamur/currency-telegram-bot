@@ -1,9 +1,9 @@
 from flask import Flask
 from telegram.ext import Updater, CommandHandler, Dispatcher, CallbackQueryHandler
-import os
+from decouple import config
 from handlers import index, currency, exchange, button
 
-TELEGRAM_BOT_TOKEN: str = os.environ.get("TELEGRAM_BOT_TOKEN")
+TELEGRAM_BOT_TOKEN: str = config("TELEGRAM_BOT_TOKEN")
 updater = Updater(token=TELEGRAM_BOT_TOKEN, use_context=True)
 
 
